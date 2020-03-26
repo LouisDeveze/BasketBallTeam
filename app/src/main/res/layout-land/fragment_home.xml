@@ -1,0 +1,134 @@
+<LinearLayout
+
+    android:id="@+id/homeContent"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="@string/home"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="36sp" />
+
+    <TextView
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:text="@string/welcome"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="28sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center_horizontal"
+        android:text="@string/match_list"
+        android:textColor="@color/colorAccentLight"
+        android:textSize="28sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/layout_round"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    android:text="Bucks\n VS\n Raptors"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/layout_round"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    android:text="Bucks\n VS\n Raptors"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/layout_round"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    android:text="Bucks\n VS\n Raptors"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/layout_round"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    android:text="Bucks\n VS\n Raptors"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </TableRow>
+
+
+
+        </TableLayout>
+    </ScrollView  >
+</LinearLayout>

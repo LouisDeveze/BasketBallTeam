@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BasketBall Team</string>
+
+    <string name="home">Accueil</string>
+    <string name="gallery">Galerie</string>
+    <string name="team">Équipes</string>
+    <string name="match">Matchs</string>
+    <string name="matchPage">Match</string>
+    <string name="options">Options</string>
+    <string name="name">Nom</string>
+    <string name="jersey">Maillot</string>
+    <string name="match_list">Matchs Sauvegardés</string>
+    <string name="team_add">Ajouter une Équipe</string>
+    <string name="player_add">Ajouter un Joueur</string>
+    <string name="city">Ville</string>
+    <string name="team_name">Équipe</string>
+    <string name="versus">VS</string>
+    <string name="score">Score</string>
+    <string name="stats">Statistiques</string>
+    <string name="time">Temps</string>
+    <string name="faults">Fautes</string>
+    <string name="welcome">Bienvenue sur le manageur d\'équipe de Basketball</string>
+
+    <string name="invalid_entry">Entrée Invalide</string>
+    <string name="operation_success">L\'opération est un succès</string>
+
+    <string name="gallery_content_desc">Ceci est le boutton d\'accès à la Galerie</string>
+    <string name="team_content_desc">Ceci est le boutton d\'accès à l\'équipe</string>
+    <string name="home_content_desc">Ceci est le boutton d\'accès à l\'Accueil</string>
+    <string name="match_content_desc">Ceci est le boutton d\'accès aux Match</string>
+    <string name="options_content_desc">Ceci est le boutton d\'accès aux Options</string>
+</resources>

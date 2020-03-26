@@ -1,0 +1,196 @@
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:id="@+id/matchContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@string/matchPage"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textSize="36sp" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/match_team_first"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="right"
+                        android:textColor="@color/colorAccentLight"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="center_horizontal"
+                        android:text="@string/versus"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="32sp" />
+                    <TextView
+                        android:id="@+id/match_team_second"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="left"
+                        android:textColor="@color/colorSecondLight"
+                        android:textSize="32sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@string/score"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textSize="36sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/match_score_first"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="right"
+                        android:textColor="@color/colorAccentLight"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="center_horizontal"
+                        android:text="-"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="32sp" />
+                    <TextView
+                        android:id="@+id/match_score_second"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:gravity="left"
+                        android:textColor="@color/colorSecondLight"
+                        android:textSize="32sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/stats"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/action_player"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/action_score"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="@string/score"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/action_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="@string/time"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/action_faults"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="@string/faults"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

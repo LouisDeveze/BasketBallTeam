@@ -1,3 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BasketBallTeam</string>
+    <string name="app_name">BasketBall Team</string>
+
+    <string name="home">Home</string>
+    <string name="gallery">Gallery</string>
+    <string name="team">Teams</string>
+    <string name="match">Matches</string>
+    <string name="matchPage">Match</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="jersey">Jersey</string>
+    <string name="match_list">Saved Matches</string>
+    <string name="team_add">Add a Team</string>
+    <string name="player_add">Add a Player</string>
+    <string name="city">City</string>
+    <string name="team_name">Team</string>
+    <string name="versus">VS</string>
+    <string name="score">Score</string>
+    <string name="stats">Statistics</string>
+    <string name="time">Time</string>
+    <string name="faults">Faults</string>
+    <string name="welcome">Welcome on BasketBall Team Manager</string>
+
+    <string name="invalid_entry">Invalid Entry</string>
+    <string name="operation_success">Operation Succeed</string>
+
+    <string name="gallery_content_desc">This is the button to access gallery</string>
+    <string name="team_content_desc">This is the button to access team</string>
+    <string name="home_content_desc">This is the button to access home</string>
+    <string name="match_content_desc">This is the button to access match</string>
+    <string name="options_content_desc">This is the button to access options</string>
 </resources>
