@@ -50,9 +50,9 @@ insert into teams values (3, 'Celtics', 'Boston');
 insert into teams values (4, 'Heat', 'Miami');
 
 -- Matches
-insert into matches values (1, '2019-05-01', 1, 2, 43.041069, -87.909416);
+insert into matches values (1, '2019-05-01', 1, 2, 43.0506969,-87.9158148);
 insert into matches values (2, '2019-05-06', 1, 3, 43.643862, -79.378244);
-insert into matches values (3, '2019-05-08', 1, 4, 43.041069, -87.909416);
+insert into matches values (3, '2019-05-08', 1, 4, 43.0506969,-87.9158148);
 insert into matches values (4, '2019-05-13', 2, 3, 43.643862, -79.378244);
 insert into matches values (5, '2019-05-21', 2, 4, 36.877710, -94.864430);
 insert into matches values (6, '2019-05-29', 3, 4, 36.877710, -94.864430);

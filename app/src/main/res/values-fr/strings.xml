@@ -21,6 +21,7 @@
     <string name="time">Temps</string>
     <string name="faults">Fautes</string>
     <string name="welcome">Bienvenue sur le manageur d\'équipe de Basketball</string>
+    <string name="address">Addresse</string>
 
     <string name="invalid_entry">Entrée Invalide</string>
     <string name="operation_success">L\'opération est un succès</string>

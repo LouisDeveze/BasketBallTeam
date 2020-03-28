@@ -11,7 +11,6 @@
         android:fontFamily="@font/comfortaa_bold"
         android:gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:text="@string/home"
         android:textColor="@color/colorPrimaryLight"
@@ -21,8 +20,6 @@
         android:fontFamily="@font/comfortaa_bold"
         android:gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:text="@string/welcome"
         android:textColor="@color/colorPrimaryLight"
@@ -31,7 +28,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/comfortaa_bold"
         android:gravity="center_horizontal"
         android:text="@string/match_list"
@@ -45,8 +41,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:id="@+id/matchTable">
         </LinearLayout>

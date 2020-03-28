@@ -7,14 +7,12 @@ import androidx.fragment.app.FragmentManager;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
@@ -32,13 +30,14 @@ import fr.android.basketballteam.database.DatabaseOpenHelper;
 import fr.android.basketballteam.gallery.FragmentGallery;
 import fr.android.basketballteam.gallery.GalleryFragListener;
 import fr.android.basketballteam.home.FragmentHome;
+import fr.android.basketballteam.mapping.AsyncMapIntent;
 import fr.android.basketballteam.match.AsyncLocalDelete;
 import fr.android.basketballteam.match.AsyncLocalSave;
 import fr.android.basketballteam.match.FragmentMatch;
 import fr.android.basketballteam.match.FragmentMatchPage;
 import fr.android.basketballteam.match.MatchFragListener;
-import fr.android.basketballteam.map.FragmentOptions;
-import fr.android.basketballteam.map.OptionsFragListener;
+import fr.android.basketballteam.options.FragmentOptions;
+import fr.android.basketballteam.options.OptionsFragListener;
 import fr.android.basketballteam.model.Player;
 import fr.android.basketballteam.model.Team;
 import fr.android.basketballteam.team.AsyncPlayerInsert;
@@ -275,8 +274,8 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
     }
 
     @Override
-    public void onMatchPin(int id) {
-
+    public void onMatchPin(int match_id) {
+        new AsyncMapIntent(getApplicationContext()).execute(match_id);
     }
 
     @Override
@@ -289,6 +288,16 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
     public void onFragmentPlayerAdded(Player p, String team) {
         new AsyncPlayerInsert(p, team).execute();
         Toast.makeText(getApplicationContext(), R.string.operation_success, Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onLanguageSelected(String language) {
+        if(language.equals("Français")){
+            this.setLocale("fr");
+        }else if(language.equals("English")){
+            this.setLocale("en");
+        }
     }
 
     private void galleryAddPic() {
@@ -346,9 +355,7 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
         Configuration conf = res.getConfiguration();
         conf.locale = myLocale;
         res.updateConfiguration(conf, dm);
-        Intent refresh = new Intent(this, ActivityMain.class);
-        finish();
-        startActivity(refresh);
+        this.recreate();
     }
 
 }

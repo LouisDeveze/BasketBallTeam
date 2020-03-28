@@ -21,6 +21,7 @@
     <string name="time">Time</string>
     <string name="faults">Faults</string>
     <string name="welcome">Welcome on BasketBall Team Manager</string>
+    <string name="address">Address</string>
 
     <string name="invalid_entry">Invalid Entry</string>
     <string name="operation_success">Operation Succeed</string>

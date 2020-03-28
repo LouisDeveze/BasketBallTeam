@@ -91,7 +91,7 @@ public class FragmentMatchPage extends Fragment {
         int blue = ContextCompat.getColor(getContext(), R.color.colorSecondLight);
 
         if(this.match_id != 0){
-            new AsyncMatchPageLoader(this.matchContent, getLayoutInflater(), activityMain, match_id, firstTeam, secondTeam, scoreFirst, scoreSecond, gold, blue).execute();
+            new AsyncMatchPageLoader(getContext(), this.matchContent, getLayoutInflater(), activityMain, match_id, firstTeam, secondTeam, scoreFirst, scoreSecond, gold, blue).execute();
         }
 
         // View Creation
