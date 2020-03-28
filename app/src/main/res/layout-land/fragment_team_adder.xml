@@ -216,7 +216,7 @@
                                 android:textSize="24sp" />
 
                             <Spinner
-                                android:id="@+id/edit_text_player_team"
+                                android:id="@+id/spinner_player_team"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPrimaryLight"

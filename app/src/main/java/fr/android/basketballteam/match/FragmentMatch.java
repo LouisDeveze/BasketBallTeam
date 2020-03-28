@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import fr.android.basketballteam.R;
-import fr.android.basketballteam.home.HomeFragListener;
 
 public class FragmentMatch extends Fragment {
 

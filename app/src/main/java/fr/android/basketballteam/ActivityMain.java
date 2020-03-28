@@ -7,10 +7,13 @@ import androidx.fragment.app.FragmentManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,11 +26,14 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Toast;
 
-import fr.android.basketballteam.database.DatabaseManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import fr.android.basketballteam.database.DatabaseOpenHelper;
 import fr.android.basketballteam.gallery.FragmentGallery;
 import fr.android.basketballteam.gallery.GalleryFragListener;
 import fr.android.basketballteam.home.FragmentHome;
-import fr.android.basketballteam.home.HomeFragListener;
+import fr.android.basketballteam.match.AsyncLocalDelete;
+import fr.android.basketballteam.match.AsyncLocalSave;
 import fr.android.basketballteam.match.FragmentMatch;
 import fr.android.basketballteam.match.FragmentMatchPage;
 import fr.android.basketballteam.match.MatchFragListener;
@@ -37,14 +43,13 @@ import fr.android.basketballteam.model.Player;
 import fr.android.basketballteam.model.Team;
 import fr.android.basketballteam.team.AsyncPlayerInsert;
 import fr.android.basketballteam.team.AsyncTeamInsert;
-import fr.android.basketballteam.team.AsyncTeamSpinnerLoader;
 import fr.android.basketballteam.team.FragmentTeam;
 import fr.android.basketballteam.team.FragmentTeamAdder;
 import fr.android.basketballteam.team.TeamFragListener;
 import fr.android.basketballteam.toolbar.FragmentToolBar;
 import fr.android.basketballteam.toolbar.ToolbarFragListener;
 
-public class ActivityMain extends AppCompatActivity implements ToolbarFragListener, HomeFragListener, TeamFragListener, MatchFragListener, OptionsFragListener, GalleryFragListener {
+public class ActivityMain extends AppCompatActivity implements ToolbarFragListener, TeamFragListener, MatchFragListener, OptionsFragListener, GalleryFragListener {
 
     /**
      * Fragment Toolbar Main
@@ -96,6 +101,7 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
 
     private String currentPhotoPath = "";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,6 +116,10 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
         } else {
             contentTab = null;
         }
+
+        // Create Database SQLite if not exists
+        SQLiteDatabase db = DatabaseOpenHelper.getInstance(getApplicationContext()).getWritableDatabase();
+        db.close();
 
         // Creating Fragments
         this.toolBar = new FragmentToolBar();
@@ -239,12 +249,29 @@ public class ActivityMain extends AppCompatActivity implements ToolbarFragListen
         this.matchPage.setMatch(id);
     }
 
+
+
     @Override
     public void onMatchCamera(int id) {
-
-        Log.d("File", "Coucou");
         dispatchTakePictureIntent();
         galleryAddPic();
+    }
+
+    @Override
+    public void onMatchDownload(int id, FloatingActionButton download) {
+        // Database Instance
+        SQLiteDatabase db = DatabaseOpenHelper.getInstance(getApplicationContext()).getWritableDatabase();
+
+        Cursor c = db.rawQuery("select m_id from matches where m_id = " + String.valueOf(match_id) + ";", null);
+        if (c.moveToFirst()) {
+            // Match Found in the Database -> has to be removed
+            new AsyncLocalDelete(getApplicationContext(), download).execute(match_id);
+
+        }else{
+            // Match Not Found in the Database Load it
+            new AsyncLocalSave(getApplicationContext(), download).execute(match_id);
+        }
+        c.close();
     }
 
     @Override

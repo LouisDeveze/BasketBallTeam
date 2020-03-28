@@ -1,6 +1,8 @@
 package fr.android.basketballteam.match;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import fr.android.basketballteam.R;
+import fr.android.basketballteam.database.DatabaseOpenHelper;
 import fr.android.basketballteam.model.Match;
 
 public class FragmentMatchPage extends Fragment {
@@ -55,11 +58,16 @@ public class FragmentMatchPage extends Fragment {
         FloatingActionButton camera = view.findViewById(R.id.camera);
         FloatingActionButton pin = view.findViewById(R.id.pin);
 
+        SQLiteDatabase db = DatabaseOpenHelper.getInstance(getContext()).getWritableDatabase();
+        Cursor c = db.rawQuery("select m_id from matches where m_id = " + String.valueOf(match_id) + ";", null);
+        if (c.moveToFirst()) { download.setImageDrawable(getContext().getDrawable(R.drawable.download_full));}
+        c.close();
+
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Download
-                onMatchDownload(match_id);
+                activityMain.onMatchDownload(match_id, download);
             }
         });
 
@@ -115,7 +123,4 @@ public class FragmentMatchPage extends Fragment {
         this.match_id = id;
     }
 
-    public void onMatchDownload(int id){
-        // Download on sqlite
-    }
 }

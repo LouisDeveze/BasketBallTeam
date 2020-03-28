@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 
 import androidx.fragment.app.Fragment;
 
 import fr.android.basketballteam.R;
+import fr.android.basketballteam.match.MatchFragListener;
 
 public class FragmentHome extends Fragment {
 
-    private HomeFragListener activityMain;
+    private MatchFragListener activityMain;
+
+    private LinearLayout table;
 
     /** Constructor */
     public FragmentHome(){}
@@ -28,6 +33,9 @@ public class FragmentHome extends Fragment {
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
+        this.table = view.findViewById(R.id.matchTable);
+
+        new AsyncSavedMatchLoader(getContext(), table, inflater, activityMain).execute();
 
         // View Creation
         return view;
@@ -41,10 +49,10 @@ public class FragmentHome extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof HomeFragListener) {
-            activityMain = (HomeFragListener) context;
+        if (context instanceof MatchFragListener) {
+            activityMain = (MatchFragListener) context;
         } else {
-            throw new RuntimeException(context.toString() + " must implement HomeFragListener");
+            throw new RuntimeException(context.toString() + " must implement MatchFragListener");
         }
     }
 
